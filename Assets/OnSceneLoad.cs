@@ -12,15 +12,15 @@ public class OnSceneLoad : MonoBehaviour
 
     private void Awake()
     {
-        SceneManager.sceneLoaded += PlayEvent;
+        SceneManager.sceneLoaded += SceneLoadedEvent;
     }
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= PlayEvent;
+        SceneManager.sceneLoaded -= SceneLoadedEvent;
     }
 
-    private void PlayEvent(Scene scene, LoadSceneMode mode)
+    private void SceneLoadedEvent(Scene scene, LoadSceneMode mode)
     {
         OnLoad.Invoke();
     }

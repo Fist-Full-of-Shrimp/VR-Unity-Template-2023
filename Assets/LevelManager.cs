@@ -20,9 +20,25 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public async void LoadScene(string sceneName)
+    public void LoadSceneAsync(string sceneName)
     {
         var scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
+
+
+
+    }
+    private IEnumerator LoadSceneAsyncCoroutine(string sceneName)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        while (!operation.isDone)
+        {
+            if (operation.progress >= 0.9f)
+            {
+                operation.allowSceneActivation = true;
+            }
+
+            yield return null; 
+        }
     }
 }
