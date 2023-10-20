@@ -3,10 +3,25 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
+
     public AudioMixer audioMixer;
-    public string masterVolumeParameter = "MasterVolume";
-    public string musicVolumeParameter = "MusicVolume";
-    public string sfxVolumeParameter = "SFXVolume";
+    public string masterVolumeParameter = "masterVolume";
+    public string musicVolumeParameter = "musicVolume";
+    public string sfxVolumeParameter = "sfxVolume";
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
