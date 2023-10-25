@@ -7,9 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(CanvasGroup))]
 public class FadeCanvas : MonoBehaviour
 {
-    [Tooltip("The speed at which the canvas fades")]
-    public float defaultDuration = 1.0f;
-
     public Coroutine CurrentRoutine { private set; get; } = null;
 
     private CanvasGroup canvasGroup = null;
@@ -20,18 +17,27 @@ public class FadeCanvas : MonoBehaviour
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-    }
+        canvasGroup.alpha = 1f;
 
-    public void StartFadeIn()
+        LevelManager.FadeIn += StartFadeIn;
+        LevelManager.FadeOut += StartFadeOut;
+    }
+    private void OnDestroy()
+    {
+        LevelManager.FadeIn -= StartFadeIn;
+        LevelManager.FadeOut -= StartFadeOut;
+
+    }
+    public void StartFadeIn(float fadeDuration)
     {
         StopAllCoroutines();
-        CurrentRoutine = StartCoroutine(FadeIn(defaultDuration));
+        CurrentRoutine = StartCoroutine(FadeIn(fadeDuration));
     }
 
-    public void StartFadeOut()
+    public void StartFadeOut(float fadeDuration)
     {
         StopAllCoroutines();
-        CurrentRoutine = StartCoroutine(FadeOut(defaultDuration));
+        CurrentRoutine = StartCoroutine(FadeOut(fadeDuration));
     }
 
     public void QuickFadeIn()
