@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: VR Template 2023
+  productName: VRTemplate2023
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -86,6 +86,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
+  dedicatedServerOptimizations: 0
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
@@ -125,6 +126,7 @@ PlayerSettings:
   switchNVNMaxPublicTextureIDCount: 0
   switchNVNMaxPublicSamplerIDCount: 0
   switchNVNGraphicsFirmwareMemory: 32
+  switchMaxWorkerMultiple: 8
   stadiaPresentMode: 0
   stadiaTargetFramerate: 0
   vulkanNumSwapchainBuffers: 3
@@ -134,7 +136,11 @@ PlayerSettings:
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 8012521312824003244, guid: ac9dc035487b6cc49937f4b2ffd35ba2, type: 2}
+  - {fileID: 11400000, guid: 07b61e89487cfd344bca84e2e8dffb8e, type: 2}
+  - {fileID: 11400000, guid: 105531a4185503541a7ab33a6ef1b6da, type: 2}
+  - {fileID: -7125889025493475013, guid: 304a460f3264d7d4198dd29944d76dd7, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -145,6 +151,7 @@ PlayerSettings:
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
+  allowHDRDisplaySupport: 0
   useHDRDisplay: 0
   hdrBitDepth: 0
   m_ColorGamuts: 00000000
@@ -158,6 +165,7 @@ PlayerSettings:
     Standalone: com.DefaultCompany.VR-Template-2023
   buildNumber:
     Standalone: 0
+    VisionOS: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
@@ -182,6 +190,8 @@ PlayerSettings:
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 12.0
+  VisionOSSdkVersion: 0
+  VisionOSTargetOSVersionString: 1.0
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
@@ -229,8 +239,10 @@ PlayerSettings:
   appleDeveloperTeamID: 
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
+  VisionOSManualSigningProvisioningProfileID: 
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
+  VisionOSManualSigningProvisioningProfileType: 0
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
   iOSAutomaticallyDetectAndAddCapabilities: 1
@@ -416,7 +428,7 @@ PlayerSettings:
     m_GraphicsJobMode: 0
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b000000
+    m_APIs: 150000000b000000
     m_Automatic: 0
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
@@ -487,6 +499,7 @@ PlayerSettings:
   switchSocketConcurrencyLimit: 14
   switchScreenResolutionBehavior: 2
   switchUseCPUProfiler: 0
+  switchEnableFileSystemTrace: 0
   switchUseGOLDLinker: 0
   switchLTOSetting: 0
   switchApplicationID: 0x01004b9000490000
@@ -617,7 +630,6 @@ PlayerSettings:
   switchSocketBufferEfficiency: 4
   switchSocketInitializeEnabled: 1
   switchNetworkInterfaceManagerInitializeEnabled: 1
-  switchPlayerConnectionEnabled: 1
   switchUseNewStyleFilepaths: 1
   switchUseLegacyFmodPriorities: 0
   switchUseMicroSleepForYield: 1
@@ -755,7 +767,6 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  selectedPlatform: 2
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1

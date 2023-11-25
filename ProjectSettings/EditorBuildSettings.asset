@@ -15,6 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HandsDemo.unity
     guid: 08418732a0a43604b989464bc71aae67
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fa7129c593cc4444ea37f285d2f0f567, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 105531a4185503541a7ab33a6ef1b6da, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 07b61e89487cfd344bca84e2e8dffb8e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ac9dc035487b6cc49937f4b2ffd35ba2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 304a460f3264d7d4198dd29944d76dd7, type: 2}
