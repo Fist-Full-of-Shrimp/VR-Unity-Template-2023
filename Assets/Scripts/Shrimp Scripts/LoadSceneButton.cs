@@ -20,6 +20,14 @@ public class LoadSceneButton : MonoBehaviour
     }
     private void StartGame()
     {
-        LevelManager.Instance.LoadSceneAsync(sceneName);
+        if(LevelManager.Instance != null)
+        {
+            LevelManager.Instance.LoadSceneAsync(sceneName);
+        }
+        else
+        {
+            Debug.Log("There is no Instance of LevelManager to load a new Scene");
+        }
+
     }
 }
